@@ -1,0 +1,670 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #e5eef8;
+  background:
+    radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.14), transparent 30%),
+    linear-gradient(180deg, #07111f 0%, #0b1628 48%, #0f172a 100%);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.page-shell {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.hero-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(7, 17, 31, 0.9), rgba(16, 34, 60, 0.76));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+}
+
+.hero-shell__backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.22), transparent 20%),
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.25), transparent 22%),
+    radial-gradient(circle at 70% 70%, rgba(168, 85, 247, 0.16), transparent 18%);
+  pointer-events: none;
+}
+
+.hero-shell__content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.85fr);
+  gap: 22px;
+  align-items: stretch;
+  padding: 34px;
+}
+
+.hero-copy-block h1,
+.details-hero h1,
+.section-head h2,
+.featured-strip__intro h2,
+.controls-panel h2,
+.detail-section h2 {
+  margin: 0;
+}
+
+.section-kicker {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #7dd3fc;
+}
+
+.hero-copy-block h1 {
+  font-size: clamp(2.3rem, 5vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  max-width: 11ch;
+}
+
+.hero-copy,
+.hero-mini-note,
+.featured-strip__intro p,
+.controls-panel__top p,
+.details-summary,
+.detail-section__head p,
+.detail-muted,
+.tip-card,
+.empty-card,
+.weather-card p,
+.detail-note-card p,
+.detail-fact-card p,
+.route-line {
+  color: #9db0c8;
+}
+
+.hero-copy {
+  max-width: 66ch;
+  font-size: 1.04rem;
+  margin: 18px 0 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.hero-mini-note {
+  font-size: 0.95rem;
+}
+
+.primary-button,
+.ghost-button,
+.featured-tile {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #34d399, #14b8a6);
+  color: #062316;
+  font-weight: 800;
+  box-shadow: 0 18px 40px rgba(20, 184, 166, 0.28);
+}
+
+.primary-button:hover,
+.ghost-button:hover,
+.featured-tile:hover,
+.destination-card:hover {
+  transform: translateY(-2px);
+}
+
+.primary-button--link {
+  width: fit-content;
+}
+
+.ghost-button {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e6f0ff;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 12px 16px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.hero-spotlight {
+  display: grid;
+  gap: 14px;
+}
+
+.hero-spotlight__card {
+  padding: 22px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.hero-spotlight__card--accent {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.18), rgba(14, 165, 233, 0.16));
+}
+
+.hero-spotlight__card span,
+.results-pill,
+.destination-card__meta,
+.mini-stats span,
+.detail-fact-card span,
+.details-panel-card__label,
+.weather-card span,
+.nearby-card span {
+  color: #aac0da;
+  font-size: 0.9rem;
+}
+
+.hero-spotlight__card strong,
+.results-pill strong,
+.detail-fact-card strong,
+.nearby-card strong,
+.details-panel-card strong,
+.weather-card strong {
+  display: block;
+  margin-top: 6px;
+  font-size: clamp(1.35rem, 3vw, 2.6rem);
+  line-height: 1.05;
+  color: #f8fbff;
+}
+
+.controls-panel,
+.featured-strip,
+.state-card,
+.destination-card,
+.detail-section,
+.details-panel-card,
+.detail-route-card,
+.detail-fact-card,
+.weather-card,
+.tip-card,
+.nearby-card,
+.detail-note-card,
+.empty-card {
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  background: rgba(11, 22, 40, 0.72);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.controls-panel,
+.featured-strip,
+.state-card {
+  margin-top: 24px;
+  border-radius: 28px;
+  padding: 22px;
+}
+
+.controls-panel__top,
+.section-head,
+.destination-card__top,
+.detail-section__head,
+.detail-route-card__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.results-pill {
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  background: rgba(125, 211, 252, 0.08);
+  border-radius: 999px;
+  padding: 12px 14px;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.controls-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controls-grid span,
+.label {
+  font-size: 0.84rem;
+  color: #aac0da;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 14px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #eff6ff;
+  outline: none;
+}
+
+input::placeholder {
+  color: #7f93ad;
+}
+
+.featured-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.featured-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.featured-tile {
+  text-align: left;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  color: #f5faff;
+}
+
+.featured-tile span {
+  font-size: 0.82rem;
+  color: #8fb2d8;
+}
+
+.featured-tile strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.2rem;
+}
+
+.featured-tile p {
+  margin: 8px 0 0;
+  color: #a8bdd6;
+}
+
+.section-head {
+  margin-top: 24px;
+}
+
+.card-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.destination-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.destination-card__glow {
+  position: absolute;
+  inset: auto -30px -30px auto;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.18), transparent 64%);
+  pointer-events: none;
+}
+
+.destination-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px;
+}
+
+.destination-card h3 {
+  margin: 6px 0 0;
+  font-size: 1.36rem;
+  color: #f8fbff;
+}
+
+.rating-pill,
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.rating-pill {
+  background: rgba(250, 204, 21, 0.14);
+  color: #fde68a;
+  border: 1px solid rgba(250, 204, 21, 0.18);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: rgba(59, 130, 246, 0.12);
+  color: #bfdbfe;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.chip--light {
+  background: rgba(255, 255, 255, 0.08);
+  color: #eff7ff;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.destination-card__description {
+  margin: 0;
+  color: #c2d1e3;
+}
+
+.mini-stats,
+.detail-facts-grid,
+.weather-grid,
+.nearby-grid,
+.tips-grid,
+.detail-routes-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.mini-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mini-stats div,
+.detail-fact-card,
+.weather-card,
+.tip-card,
+.nearby-card,
+.detail-note-card,
+.empty-card {
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.mini-stats strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.98rem;
+  color: #f5fbff;
+}
+
+.route-line {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.details-page {
+  padding-top: 8px;
+}
+
+.details-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.8fr);
+  gap: 18px;
+  align-items: start;
+  padding: 28px;
+  border-radius: 30px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.16), transparent 24%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.18), transparent 28%),
+    rgba(11, 22, 40, 0.8);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
+}
+
+.details-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.details-summary {
+  max-width: 70ch;
+  margin: 16px 0 0;
+}
+
+.details-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.details-quick-stats div,
+.details-panel-card {
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.details-quick-stats span,
+.details-panel-card__label {
+  display: block;
+  color: #a9c0da;
+  font-size: 0.88rem;
+}
+
+.details-quick-stats strong,
+.details-panel-card strong {
+  display: block;
+  margin-top: 6px;
+  color: #f8fbff;
+  font-size: 1.08rem;
+}
+
+.details-panel-card p,
+.details-panel-card a {
+  margin: 10px 0 0;
+  color: #8ee5c6;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.detail-section {
+  border-radius: 28px;
+  padding: 22px;
+}
+
+.detail-section--wide {
+  grid-column: span 2;
+}
+
+.detail-section__head p {
+  margin: 6px 0 0;
+}
+
+.detail-facts-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.detail-routes-grid,
+.weather-grid,
+.nearby-grid,
+.tips-grid {
+  margin-top: 16px;
+}
+
+.detail-routes-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.detail-route-card {
+  border-radius: 22px;
+  padding: 16px;
+}
+
+.detail-route-card__head strong {
+  color: #eff8ff;
+  font-size: 1rem;
+}
+
+.route-mode {
+  text-transform: capitalize;
+  color: #86efac;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.detail-route-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.detail-route-card__meta span {
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #c5d4e5;
+  font-size: 0.86rem;
+}
+
+.detail-list {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: #d4e0ee;
+}
+
+.detail-list li + li {
+  margin-top: 8px;
+}
+
+.nearby-grid,
+.tips-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.nearby-card,
+.tip-card,
+.weather-card,
+.detail-note-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weather-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-stack {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.state-card,
+.empty-card {
+  color: #d7e4f1;
+}
+
+@media (max-width: 1100px) {
+  .hero-shell__content,
+  .details-hero,
+  .featured-strip,
+  .controls-grid,
+  .detail-facts-grid,
+  .weather-grid,
+  .mini-stats,
+  .details-quick-stats,
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-section--wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding: 16px;
+  }
+
+  .hero-shell__content,
+  .details-hero,
+  .controls-panel,
+  .featured-strip,
+  .state-card,
+  .detail-section,
+  .destination-card__content {
+    padding: 18px;
+  }
+
+  .hero-copy-block h1,
+  .details-hero h1 {
+    max-width: none;
+  }
+
+  .card-grid,
+  .detail-routes-grid,
+  .nearby-grid,
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}

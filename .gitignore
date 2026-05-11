@@ -33,8 +33,6 @@ pids
 
 # environment variables
 
-.env
-.env.*
 !.env.example
 
 # TypeScript
@@ -61,3 +59,7 @@ storybook-static
 # local configs
 
 *.local
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
+branch_structure.json
